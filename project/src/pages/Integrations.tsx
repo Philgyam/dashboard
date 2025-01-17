@@ -214,18 +214,18 @@ export default function Integrations() {
   );
 
   return (
-    <div className="p-4 md:p-6 space-y-8 bg-gray-50 min-h-screen mx-auto flex flex-col items-start"> {/* Align left */}
-      <div className="flex justify-between items-center bg-blue-600 text-white p-4 rounded-lg w-full"> {/* Full width */}
-        <div>
+    <div className="p-4 md:p-6 space-y-8 bg-gray-50 min-h-screen mx-auto flex flex-col items-start">
+      <div className="flex flex-col md:flex-row justify-between items-center bg-blue-600 text-white p-4 rounded-lg w-full">
+        <div className="mb-4 md:mb-0">
           <h1 className="text-3xl font-bold">Integrations</h1>
           <p className="text-gray-200 mt-2">Connect your favorite tools and services</p>
         </div>
-        <Button className="bg-yellow-400 text-gray-900">
+        <Button className="bg-yellow-400 text-gray-900 flex-shrink-0">
           <AlertCircle className="mr-2 h-4 w-4" />
           Check Integration Status
         </Button>
       </div>
-
+  
       {/* Integration Sections */}
       {renderIntegrationSection('Payment Processing', integrations.payments)}
       {renderIntegrationSection('Marketing & Email', integrations.marketing)}
@@ -233,10 +233,10 @@ export default function Integrations() {
       {renderIntegrationSection('Shipping & Logistics', integrations.shipping)}
       {renderIntegrationSection('Analytics', integrations.analytics)}
       {renderIntegrationSection('Customer Support', integrations.support)}
-
+  
       {/* Integration Modal */}
       <Dialog open={isModalOpen} onOpenChange={setIsModalOpen}>
-        <DialogContent className="sm:max-w-[500px] bg-white rounded-lg shadow-lg"> {/* Added background color */}
+        <DialogContent className="sm:max-w-[500px] bg-white rounded-lg shadow-lg">
           {selectedIntegration && (
             <>
               <DialogHeader>
